@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.R;
+
 public class LayoutCodeActivity extends AppCompatActivity {
 
     @Override
@@ -20,18 +22,8 @@ public class LayoutCodeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.linear_layout);
-        LinearLayout linearLayout = new LinearLayout(this);
-        linearLayout.setOrientation(LinearLayout.VERTICAL);
+        setContentView(R.layout.linear_layout);
 
-        Button btn1 = new Button(this);
-        btn1.setText("LinearButton1");
-        btn1.setLayoutParams(new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        linearLayout.addView(btn1);
-
-        setContentView(linearLayout);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-
-
 }
