@@ -131,23 +131,10 @@ public class MainActivity extends AppCompatActivity {
             TextView tvId = (TextView)findViewById(R.id.txtId);
             TextView tvPw = (TextView)findViewById(R.id.txtPw);
 
-            if (new File(userDataFile).exists()) {
-                new File(userDataFile).delete();
-            }
-            new File(userDataFile);
-
-            BufferedWriter bufferedWriter = new BufferedWriter(
-                    new FileWriter(userDataFile, true));
-            bufferedWriter.write(tvId.getText().toString() + "\t");
-            bufferedWriter.write(tvPw.getText().toString() + "\t\n");
-            bufferedWriter.close();
-
-            Toast.makeText(this,"회원가입이 완료되었습니다!", Toast.LENGTH_LONG).show();
-
-//            Intent myIntent = new Intent(this, LayoutCodeActivity.class);
-//            myIntent.putExtra("id",tvId.getText().toString());
-//            myIntent.putExtra("pw",tvPw.getText().toString());
-//            startActivity(myIntent);
+            Intent myIntent = new Intent(this, LayoutCodeActivity.class);
+            myIntent.putExtra("userId",tvId.getText().toString());
+            myIntent.putExtra("userPw",tvPw.getText().toString());
+            startActivity(myIntent);
         }
         catch (Exception e)
         {
