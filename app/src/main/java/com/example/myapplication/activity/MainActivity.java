@@ -23,10 +23,24 @@ import java.io.InputStreamReader;
 import java.nio.Buffer;
 
 public class MainActivity extends AppCompatActivity {
+
+    String userDataFile;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        try
+        {
+            userDataFile = getFilesDir() + userAccountFileName;
+        }
+        catch (Exception e)
+        {
+            System.out.println("OnCreate Error");
+            return;
+        }
+
     }
 
     public void MyOnClick(View v)
@@ -50,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //로그인버튼 클릭 이벤트
     private void BtnLoginClick()
     {
         try
@@ -61,9 +76,9 @@ public class MainActivity extends AppCompatActivity {
             TextView tvId = (TextView)findViewById(R.id.txtId);
             TextView tvPw = (TextView)findViewById(R.id.txtPw);
 
-            if (new File(getFilesDir() + userAccountFileName).exists())
+            if (new File(userDataFile).exists())
             {
-                InputStream iStream = new FileInputStream(getFilesDir() + userAccountFileName);
+                InputStream iStream = new FileInputStream(userDataFile);
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(iStream));
                 StringBuffer sBuffer = new StringBuffer();
 
@@ -108,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //회원가입 버튼 클릭 이벤트
     private void BtnJoinClick()
     {
         try
@@ -115,18 +131,13 @@ public class MainActivity extends AppCompatActivity {
             TextView tvId = (TextView)findViewById(R.id.txtId);
             TextView tvPw = (TextView)findViewById(R.id.txtPw);
 
-            if (!new File(getFilesDir() + userAccountFileName).exists())
-            {
-                new File(getFilesDir() + userAccountFileName);
+            if (new File(userDataFile).exists()) {
+                new File(userDataFile).delete();
             }
-            else
-            {
-                new File(getFilesDir() + userAccountFileName).delete();
-                new File(getFilesDir() + userAccountFileName);
-            }
+            new File(userDataFile);
 
             BufferedWriter bufferedWriter = new BufferedWriter(
-                    new FileWriter(getFilesDir() + userAccountFileName, true));
+                    new FileWriter(userDataFile, true));
             bufferedWriter.write(tvId.getText().toString() + "\t");
             bufferedWriter.write(tvPw.getText().toString() + "\t\n");
             bufferedWriter.close();
