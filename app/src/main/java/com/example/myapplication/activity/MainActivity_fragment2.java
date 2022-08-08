@@ -78,11 +78,11 @@ public class MainActivity_fragment2 extends Fragment {
             ListView lvwContent = (ListView)view.findViewById(R.id.listView);
 
             SingleAdapter adapter = new SingleAdapter();
-            adapter.addItem(new SingleItem("title1","content1", R.drawable.ic_launcher_foreground));
-            adapter.addItem(new SingleItem("title2","content2", R.drawable.ic_launcher_foreground));
-            adapter.addItem(new SingleItem("title3","content3", R.drawable.ic_launcher_foreground));
-            adapter.addItem(new SingleItem("title4","content4", R.drawable.ic_launcher_foreground));
-            adapter.addItem(new SingleItem("title5","content5", R.drawable.ic_launcher_foreground));
+            adapter.addItem(new SingleItem("상태정보1","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", R.drawable.git_image));
+            adapter.addItem(new SingleItem("상태정보2","bbbbbbbbbbbbbbbbbbbbbbbbbbbb", R.drawable.git_image));
+            adapter.addItem(new SingleItem("상태정보3","cccccccccccccccccccccccccccccccccccccccccccccccccc", R.drawable.git_image));
+            adapter.addItem(new SingleItem("상태정보4","ddddddddddddddddddddddddddddddddddd", R.drawable.git_image));
+            adapter.addItem(new SingleItem("상태정보5","eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", R.drawable.git_image));
 
             lvwContent.setAdapter(adapter);
 
