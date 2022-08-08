@@ -3,12 +3,23 @@ package com.example.myapplication.activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.ListFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.myapplication.R;
+import com.example.myapplication.common.SingleItem;
+import com.example.myapplication.common.SingleItemView;
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +72,71 @@ public class MainActivity_fragment2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main_activity_fragment2, container, false);
+        try
+        {
+            View view = inflater.inflate(R.layout.fragment_main_activity_fragment2, container, false);
+            ListView lvwContent = (ListView)view.findViewById(R.id.listView);
+
+            SingleAdapter adapter = new SingleAdapter();
+            adapter.addItem(new SingleItem("title1","content1", R.drawable.ic_launcher_foreground));
+            adapter.addItem(new SingleItem("title2","content2", R.drawable.ic_launcher_foreground));
+            adapter.addItem(new SingleItem("title3","content3", R.drawable.ic_launcher_foreground));
+            adapter.addItem(new SingleItem("title4","content4", R.drawable.ic_launcher_foreground));
+            adapter.addItem(new SingleItem("title5","content5", R.drawable.ic_launcher_foreground));
+
+            lvwContent.setAdapter(adapter);
+
+            return view;
+        }
+        catch (Exception e)
+        {
+            System.out.println("onCreateView Error");
+            return null;
+        }
+    }
+
+    public class SingleAdapter extends BaseAdapter
+    {
+        ArrayList<SingleItem> items = new ArrayList<SingleItem>();
+
+        @Override
+        public int getCount() {
+            return items.size();
+        }
+
+        public void addItem(SingleItem item)
+        {
+            items.add(item);
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return items.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            SingleItemView singleItemView = null;
+            if(convertView == null)
+            {
+                singleItemView = new SingleItemView(getActivity().getApplicationContext());
+            }
+            else
+            {
+                singleItemView = (SingleItemView)convertView;
+            }
+
+            SingleItem item = items.get(position);
+            singleItemView.setTitle(item.getTitle());
+            singleItemView.setContent(item.getContent());
+            singleItemView.setResId(item.getResId());
+
+            return singleItemView;
+        }
     }
 }
