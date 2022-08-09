@@ -23,7 +23,7 @@ public class SingleItemView extends ConstraintLayout {
     private void init(Context context)
     {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.fragment2_item_recycler, this,true);
+        inflater.inflate(R.layout.item_fragment_list2, this,true);
         textView = findViewById(R.id.textView10);
         textView2 =findViewById(R.id.textView11);
         imageView = findViewById(R.id.imageView2);

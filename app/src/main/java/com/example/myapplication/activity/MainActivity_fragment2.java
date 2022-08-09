@@ -3,21 +3,16 @@ package com.example.myapplication.activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.ListFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.myapplication.R;
 import com.example.myapplication.common.SingleItem;
 import com.example.myapplication.common.SingleItemView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -74,7 +69,7 @@ public class MainActivity_fragment2 extends Fragment {
         // Inflate the layout for this fragment
         try
         {
-            View view = inflater.inflate(R.layout.fragment_main_activity_fragment2, container, false);
+            View view = inflater.inflate(R.layout.fragment_main_activity_list2, container, false);
             ListView lvwContent = (ListView)view.findViewById(R.id.listView);
 
             SingleAdapter adapter = new SingleAdapter();
