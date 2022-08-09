@@ -9,9 +9,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.myapplication.R;
-import com.example.myapplication.activity.MainActivity_fragment1;
-import com.example.myapplication.activity.MainActivity_fragment2;
-import com.example.myapplication.activity.MainActivity_fragment3;
+import com.example.myapplication.fragment.MainActivity_fragment1;
+import com.example.myapplication.fragment.MainActivity_fragment2;
+import com.example.myapplication.fragment.MainActivity_fragment3;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to

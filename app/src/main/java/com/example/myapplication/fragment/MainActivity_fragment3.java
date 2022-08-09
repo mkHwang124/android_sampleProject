@@ -1,14 +1,18 @@
-package com.example.myapplication.activity;
+package com.example.myapplication.fragment;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.myapplication.R;
+import com.example.myapplication.common.RecyclerAdapter;
+import com.example.myapplication.common.RecyclerItem;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +65,25 @@ public class MainActivity_fragment3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main_activity_list3, container, false);
+        View view = inflater.inflate(R.layout.fragment_main_activity_list3, container, false);
+        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        RecyclerAdapter adapter = new RecyclerAdapter();
+        adapter.addItem(new RecyclerItem("title1","content1",R.drawable.git_image));
+        adapter.addItem(new RecyclerItem("title2","content2",R.drawable.git_image));
+        adapter.addItem(new RecyclerItem("title3","content3",R.drawable.git_image));
+        adapter.addItem(new RecyclerItem("title4","content4",R.drawable.git_image));
+        adapter.addItem(new RecyclerItem("title5","content5",R.drawable.git_image));
+        adapter.addItem(new RecyclerItem("title6","content6",R.drawable.git_image));
+        adapter.addItem(new RecyclerItem("title7","content7",R.drawable.git_image));
+        adapter.addItem(new RecyclerItem("title8","content8",R.drawable.git_image));
+        adapter.notifyDataSetChanged();
+
+        recyclerView.setAdapter(adapter);
+
+        return view;
     }
 }
