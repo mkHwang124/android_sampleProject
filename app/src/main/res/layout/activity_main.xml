@@ -16,14 +16,14 @@
             android:id="@+id/appBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/darker_gray"
+            android:background="@color/MainColor"
             android:theme="@style/Theme.MyApplication.AppBarOverlay">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@android:color/darker_gray"
+                android:background="@color/MainColor"
                 app:menu="@menu/toolbar_menu"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:subtitleTextColor="@color/black"
@@ -33,9 +33,9 @@
                 android:id="@+id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:tabIconTint="@android:color/darker_gray"
-                app:tabIndicatorColor="@android:color/darker_gray"
-                app:tabTextColor="@android:color/darker_gray" />
+                app:tabIconTint="@color/MainColor"
+                app:tabIndicatorColor="@color/MainColor"
+                app:tabTextColor="@color/MainColor" />
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.viewpager.widget.ViewPager

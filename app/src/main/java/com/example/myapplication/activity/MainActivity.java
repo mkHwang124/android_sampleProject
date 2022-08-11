@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.GravityCompat;
@@ -91,6 +92,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.toolbar_menu, menu);
+
+//        //검색버튼 클릭 시 길이 꽉 차게 늘리는 구문
+//        SearchView searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
+//        searchView.setMaxWidth(Integer.MAX_VALUE);
+//        searchView.setQueryHint("조회할 내용을 입력해주세요!"); // 힌트 추가
+
         return super.onCreateOptionsMenu(menu);
     }
 
