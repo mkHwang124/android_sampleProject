@@ -13,7 +13,7 @@
         android:layout_marginBottom="30dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="회원가입"
-        android:textColor="@color/purple_200"
+        android:textColor="@color/black"
         android:textSize="20sp" />
 
     <ScrollView
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left|center_vertical"
                 android:text="이름"
-                android:textColor="@color/purple_200"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <EditText
@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/edge_puple"
+                android:background="@drawable/edge_black"
                 android:ems="10"
                 android:gravity="left|center_vertical"
                 android:hint="이름"
@@ -52,7 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="아이디"
-                android:textColor="@color/purple_200"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <EditText
@@ -60,7 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/edge_puple"
+                android:background="@drawable/edge_black"
                 android:ems="10"
                 android:gravity="left|center_vertical"
                 android:hint="아이디"
@@ -72,7 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="비밀번호"
-                android:textColor="@color/purple_200"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <EditText
@@ -80,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/edge_puple"
+                android:background="@drawable/edge_black"
                 android:ems="10"
                 android:gravity="left|center_vertical"
                 android:hint="비밀번호"
@@ -92,7 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="비밀번호 확인"
-                android:textColor="@color/purple_200"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <LinearLayout
@@ -109,7 +109,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/edge_puple"
+                    android:background="@drawable/edge_black"
                     android:ems="10"
                     android:gravity="center_vertical"
                     android:hint="비밀번호 확인"
@@ -123,7 +123,7 @@
                     android:layout_marginRight="0dp"
                     android:layout_weight="1"
                     android:autoText="true"
-                    android:backgroundTint="@color/purple_200"
+                    android:backgroundTint="@android:color/darker_gray"
                     android:gravity="center_horizontal|center_vertical"
                     android:minWidth="0dip"
                     android:minHeight="0dip"
@@ -139,7 +139,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="생년월일"
-                android:textColor="@color/purple_200"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <LinearLayout
@@ -154,7 +154,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/edge_puple"
+                    android:background="@drawable/edge_black"
                     android:ems="10"
                     android:hint="년(4자)"
                     android:inputType="textPersonName"
@@ -167,7 +167,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/edge_puple"
+                    android:background="@drawable/edge_black"
                     android:ems="10"
                     android:hint="월"
                     android:inputType="textPersonName"
@@ -179,7 +179,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/edge_puple"
+                    android:background="@drawable/edge_black"
                     android:ems="10"
                     android:hint="일"
                     android:inputType="textPersonName"
@@ -191,7 +191,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="이메일"
-                android:textColor="@color/purple_200"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <LinearLayout
@@ -208,7 +208,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/edge_puple"
+                    android:background="@drawable/edge_black"
                     android:ems="10"
                     android:gravity="center_vertical"
                     android:hint="이메일"
@@ -222,7 +222,7 @@
                     android:layout_marginRight="0dp"
                     android:layout_weight="1"
                     android:autoText="true"
-                    android:backgroundTint="@color/purple_200"
+                    android:backgroundTint="@android:color/darker_gray"
                     android:gravity="center_horizontal|center_vertical"
                     android:minWidth="0dip"
                     android:minHeight="0dip"
@@ -238,7 +238,7 @@
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:backgroundTint="@color/purple_200"
+                android:backgroundTint="@android:color/darker_gray"
                 android:onClick="MyOnClick"
                 android:text="회원가입" />
         </LinearLayout>

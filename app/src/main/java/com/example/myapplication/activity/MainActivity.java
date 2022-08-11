@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private Toolbar myToolbar;
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +36,6 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
-
-        myToolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(myToolbar);
-
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = binding.viewPager;
         viewPager.setAdapter(sectionsPagerAdapter);
@@ -47,14 +43,12 @@ public class MainActivity extends AppCompatActivity {
         tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = binding.fab;
 
-        findViewById(R.id.toolbar).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        drawerLayout = findViewById(R.id.drawerLayout);
 
-                // start에 지정된 Drawer 열기
-                drawerLayout.openDrawer(GravityCompat.START);
-            }
-        });
+        myToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // 왼쪽 상단 버튼 만들기
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_dehaze_24); // 이미지지정
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,14 +60,40 @@ public class MainActivity extends AppCompatActivity {
 
         NavigationView navigationView = findViewById(R.id.navigationView);
         navigationView.setItemIconTintList(null);
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId())
+                {
+                    case R.id.nav_home:
+                        Toast.makeText(MainActivity.this, "nav_home", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.nav_remote:
+                        Toast.makeText(MainActivity.this, "nav_remote", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.nav_addremote:
+                        Toast.makeText(MainActivity.this, "nav_addremote", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.nav_explain:
+                        Toast.makeText(MainActivity.this, "nav_explain", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.nav_settings:
+                        Toast.makeText(MainActivity.this, "nav_settings", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                return false;
+            }
+        });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu, menu);
-        return true;
+        menuInflater.inflate(R.menu.toolbar_menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -87,6 +107,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.menu_logout:
                 Toast.makeText(this, "menu_logout", Toast.LENGTH_SHORT).show();
+                break;
+            case android.R.id.home:
+                drawerLayout.openDrawer(GravityCompat.START);
                 break;
         }
         return super.onOptionsItemSelected(item);

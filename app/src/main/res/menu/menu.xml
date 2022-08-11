@@ -4,19 +4,14 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 <item
     android:id="@+id/menu_search"
     android:icon="@drawable/ic_baseline_search_24"
-    android:orderInCategory="1"
-    android:title="serchMenu"
-    app:showAsAction="always" />
+    android:title="@string/Search"
+    app:showAsAction="ifRoom" />
 <item
     android:id="@+id/menu_account"
-    android:icon="@drawable/ic_baseline_login_24"
-    android:orderInCategory="1"
-    android:title="account"
+    android:title="@string/Account"
     app:showAsAction="never" />
 <item
     android:id="@+id/menu_logout"
-    android:icon="@drawable/ic_baseline_delete_24"
-    android:orderInCategory="1"
-    android:title="logout"
+    android:title="@string/Logout"
     app:showAsAction="never" />
 </menu>
