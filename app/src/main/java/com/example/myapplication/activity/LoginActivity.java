@@ -69,6 +69,9 @@ public class LoginActivity extends AppCompatActivity {
                 case R.id.txtJoin:
                     BtnJoinClick();
                     break;
+                case R.id.btnDelete:
+                    BtnDeleteClick();
+                    break;
             }
         }
         catch (Exception e)
@@ -137,6 +140,10 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(this,"아이디를 확인해주세요!", Toast.LENGTH_LONG).show();
                 }
             }
+            else
+            {
+                Toast.makeText(this,"계정정보를 확인해주세요!", Toast.LENGTH_LONG).show();
+            }
 
 
         }
@@ -163,6 +170,31 @@ public class LoginActivity extends AppCompatActivity {
         catch (Exception e)
         {
             System.out.println("BtnJoinClick Error");
+            return;
+        }
+    }
+
+    //회원정보 일괄 삭제
+    private void BtnDeleteClick()
+    {
+        try
+        {
+            if (new File(userDataFile).exists()) {
+                new File(userDataFile).delete();
+            }
+
+            if(new File(userDataFile).exists())
+            {
+                Toast.makeText(this,"정보 삭제 중 문제가 발생했습니다.",Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                Toast.makeText(this,"정보 삭제가 완료되었습니다.",Toast.LENGTH_SHORT).show();
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println("BtnDeleteClick Error");
             return;
         }
     }
