@@ -37,6 +37,7 @@ public class JoinActivity extends AppCompatActivity {
         try
         {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            userDataFile = getFilesDir() + userAccountFileName;
 
             Intent myIntent = getIntent();
             userId = myIntent.getStringExtra("userId");
@@ -55,7 +56,7 @@ public class JoinActivity extends AppCompatActivity {
                 txtPw.setText(userPw);
             }
 
-            userDataFile = getFilesDir() + userAccountFileName;
+
         }
         catch (Exception e)
         {
@@ -162,27 +163,33 @@ public class JoinActivity extends AppCompatActivity {
             TextView txtDay = (TextView) findViewById(R.id.txtDay);
             TextView txtMail = (TextView) findViewById(R.id.txtMail);
 
+            if (userDataFile == null || userDataFile.length() < 1)
+            {
+                userDataFile = getFilesDir() + userAccountFileName;
+            }
+
             if (!new File(userDataFile).exists()) {
                 new File(userDataFile);
             }
 
             BufferedWriter bufferedWriter = new BufferedWriter(
                     new FileWriter(userDataFile, true));
+            bufferedWriter.write("[");
             if (txtId.getText() != null && txtId.getText().length() > 0)
-            bufferedWriter.write(txtId.getText().toString() + "\t");
+            bufferedWriter.write("{userId : \"" + txtId.getText().toString() + "\"},");
             if (txtPw.getText() != null && txtPw.getText().length() > 0)
-            bufferedWriter.write(txtPw.getText().toString() + "\t");
+            bufferedWriter.write("{userPw : \"" + txtPw.getText().toString() + "\"},");
             if (txtName.getText() != null && txtName.getText().length() > 0)
-            bufferedWriter.write(txtName.getText().toString() + "\t");
+            bufferedWriter.write("{userName : \"" + txtName.getText().toString() + "\"},");
             if (txtYear.getText() != null && txtYear.getText().length() > 0)
-            bufferedWriter.write(txtYear.getText().toString() + "\t");
+            bufferedWriter.write("{userYear : \"" + txtYear.getText().toString() + "\"},");
             if (txtMonth.getText() != null && txtMonth.getText().length() > 0)
-            bufferedWriter.write(txtMonth.getText().toString() + "\t");
+            bufferedWriter.write("{userMonth : \"" + txtMonth.getText().toString() + "\"},");
             if (txtDay.getText() != null && txtDay.getText().length() > 0)
-            bufferedWriter.write(txtDay.getText().toString() + "\t");
+            bufferedWriter.write("{userDay : \"" + txtDay.getText().toString() + "\"},");
             if (txtMail.getText() != null && txtMail.getText().length() > 0)
-            bufferedWriter.write(txtMail.getText().toString() + "\t");
-            bufferedWriter.write("\n");
+            bufferedWriter.write("{userEmail : \"" + txtMail.getText().toString() + "\"},");
+            bufferedWriter.write("],\n");
             bufferedWriter.close();
 
             Toast.makeText(this,"회원가입이 완료되었습니다!", Toast.LENGTH_LONG).show();

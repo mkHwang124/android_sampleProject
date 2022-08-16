@@ -88,10 +88,13 @@ public class LoginActivity extends AppCompatActivity {
         {
             int startIndex = 0;
             int endIndex = 0;
+            int startPwIndex = 0;
+            int endPwIndex = 0;
             String temp = "";
             String fileContent = "";
             String userId = "";
             String userPw = "";
+            String userInfo = "";
 
             TextView tvId = (TextView)findViewById(R.id.txtId);
             TextView tvPw = (TextView)findViewById(R.id.txtPw);
@@ -117,12 +120,16 @@ public class LoginActivity extends AppCompatActivity {
 
                 fileContent = sBuffer.toString();
 
-                if (fileContent.contains("\t"+ userId + "\t") == true)
+                if (fileContent.contains("\""+ userId + "\"") == true)
                 {
-                    startIndex = fileContent.indexOf("\t", fileContent.indexOf("\t" +userId + "\t") + 1);
-                    endIndex = fileContent.indexOf("\t", startIndex + 1);
+                    startIndex = fileContent.lastIndexOf("[", fileContent.indexOf("\"" +userId + "\""));
+                    endIndex = fileContent.indexOf("]", startIndex);
 
-                    if(userPw.equals(fileContent.substring(startIndex+1, endIndex)))
+                    userInfo = fileContent.substring(startIndex + 1, endIndex);
+                    startPwIndex =  userInfo.indexOf("\"",userInfo.indexOf("userPw")) + 1;
+                    endPwIndex = userInfo.indexOf("\"",startPwIndex);
+
+                    if(userPw.equals(userInfo.substring(startPwIndex, endPwIndex)))
                     {
                         Toast.makeText(this,"접속성공!", Toast.LENGTH_LONG).show();
 

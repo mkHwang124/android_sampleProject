@@ -2,14 +2,14 @@ package com.example.myapplication.common;
 
 public class UserData {
 
-    private String userNo;
-    private String userId;
-    private String userPw;
-    private String userName;
-    private String userEmail;
-    private String userYear;
-    private String userMonth;
-    private String userDay;
+    private static String userNo;
+    private static String userId;
+    private static String userPw;
+    private static String userName;
+    private static String userEmail;
+    private static String userYear;
+    private static String userMonth;
+    private static String userDay;
 
     public UserData(String userNo, String userId, String userPw,
                     String userName, String userEmail, String userYear, String userMonth, String userDay)
