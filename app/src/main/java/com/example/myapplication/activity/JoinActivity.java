@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.R;
+import com.example.myapplication.common.UserData;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -107,7 +108,6 @@ public class JoinActivity extends AppCompatActivity {
         {
             String userPw = "";
             String userPwCheck = "";
-
             TextView txtPw = (TextView) findViewById(R.id.txtPw);
             TextView txtPwCheck = (TextView) findViewById(R.id.txtPwCheck);
 
