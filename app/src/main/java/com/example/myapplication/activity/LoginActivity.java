@@ -114,9 +114,9 @@ public class LoginActivity extends AppCompatActivity {
 
                 fileContent = sBuffer.toString();
 
-                if (fileContent.contains(userId + "\t") == true)
+                if (fileContent.contains("\t"+ userId + "\t") == true)
                 {
-                    startIndex = fileContent.indexOf("\t", fileContent.indexOf(userId + "\t"));
+                    startIndex = fileContent.indexOf("\t", fileContent.indexOf("\t" +userId + "\t") + 1);
                     endIndex = fileContent.indexOf("\t", startIndex + 1);
 
                     if(userPw.equals(fileContent.substring(startIndex+1, endIndex)))

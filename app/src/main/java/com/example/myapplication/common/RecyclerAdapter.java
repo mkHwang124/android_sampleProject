@@ -37,7 +37,7 @@ public class RecyclerAdapter extends androidx.recyclerview.widget.RecyclerView.A
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapter.ItemViewHolder holder, int position) {
         // Item을 하나, 하나 보여주는(bind 되는) 함수입니다.
-        holder.onBind(item.get(position));
+        holder.onBind(item.get(position), position);
     }
 
     @Override
@@ -68,7 +68,7 @@ public class RecyclerAdapter extends androidx.recyclerview.widget.RecyclerView.A
             imageView2 = itemView.findViewById(R.id.imageView4);
         }
 
-        void onBind(RecyclerItem item) {
+        void onBind(RecyclerItem item, int position) {
             this.item = item;
             textView1.setText(item.getTitle());
             textView2.setText(item.getContent());
@@ -80,6 +80,7 @@ public class RecyclerAdapter extends androidx.recyclerview.widget.RecyclerView.A
             textView2.setOnClickListener(this);
             imageView.setOnClickListener(this);
 
+            this.position = position;
             changeVisibility(selectedItems.get(position));
         }
 

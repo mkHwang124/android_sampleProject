@@ -72,14 +72,14 @@ public class MainActivity_fragment3 extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         RecyclerAdapter adapter = new RecyclerAdapter();
-        adapter.addItem(new RecyclerItem("title1","content1",R.drawable.git_image));
-        adapter.addItem(new RecyclerItem("title2","content2",R.drawable.git_image));
-        adapter.addItem(new RecyclerItem("title3","content3",R.drawable.git_image));
-        adapter.addItem(new RecyclerItem("title4","content4",R.drawable.git_image));
-        adapter.addItem(new RecyclerItem("title5","content5",R.drawable.git_image));
-        adapter.addItem(new RecyclerItem("title6","content6",R.drawable.git_image));
-        adapter.addItem(new RecyclerItem("title7","content7",R.drawable.git_image));
-        adapter.addItem(new RecyclerItem("title8","content8",R.drawable.git_image));
+        adapter.addItem(new RecyclerItem("GitHub","content1",R.drawable.git_image));
+        adapter.addItem(new RecyclerItem("AndroidStudio","content2",R.drawable.android_studio));
+        adapter.addItem(new RecyclerItem("AWS","content3",R.drawable.aws));
+        adapter.addItem(new RecyclerItem("Docker","content4",R.drawable.docker));
+        adapter.addItem(new RecyclerItem("Eclipse","content5",R.drawable.eclipse));
+        adapter.addItem(new RecyclerItem("GCP","content6",R.drawable.gcp));
+        adapter.addItem(new RecyclerItem("Jenkins","content7",R.drawable.jenkins));
+        adapter.addItem(new RecyclerItem("GitHub2","content8",R.drawable.git_image));
         adapter.notifyDataSetChanged();
 
         recyclerView.setAdapter(adapter);

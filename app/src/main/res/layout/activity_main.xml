@@ -5,6 +5,7 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:visibility="visible"
     tools:context=".activity.MainActivity">
 
     <LinearLayout
@@ -27,7 +28,10 @@
                 app:menu="@menu/toolbar_menu"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:subtitleTextColor="@color/black"
-                app:titleTextColor="@color/black" />
+                app:titleTextColor="@color/black">
+
+
+            </androidx.appcompat.widget.Toolbar>
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabs"
@@ -36,6 +40,7 @@
                 app:tabIconTint="@color/MainColor"
                 app:tabIndicatorColor="@color/MainColor"
                 app:tabTextColor="@color/MainColor" />
+
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.viewpager.widget.ViewPager
